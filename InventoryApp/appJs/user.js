@@ -75,6 +75,10 @@ app.controller('UserController', function ($scope, UserService) {
 
             var result = resp;
             console.log('Response :', result);
+
+            if (result.data == true) {
+                RedirectToLandingPage();
+            }
             //End
 
         }, function (err) {
@@ -95,6 +99,12 @@ app.controller('UserController', function ($scope, UserService) {
         }
     }
 
+    function RedirectToLandingPage() {
+        createCookie("userName", $scope.userName, 1);
+        var base_url = window.location.origin;
+        window.location.href = base_url + "/Inventory/Index";
+    }
+
     $scope.LoginUser = function () {
         var promise = UserService.loginUser($scope.userName, $scope.userPassword);
         promise.then(function (resp) {
@@ -105,9 +115,7 @@ app.controller('UserController', function ($scope, UserService) {
 
             $scope.errorLogin = !result.data;
             if (result.data == true) {
-                createCookie("userName", $scope.userName, 1);
-                  var base_url = window.location.origin;
-                  window.location.href = base_url + "/Inventory/Index";
+                RedirectToLandingPage();
             }
             //End
 
