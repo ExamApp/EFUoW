@@ -15,7 +15,6 @@ app.service('UserService', function ($http) {
             url: url,
             dataType: 'json'
         }
-
         
         var data = $http(req).then(callback);
         //var data = $http.post(url, userName, userPassword);
