@@ -86,7 +86,7 @@
                     <div class="col-md-8">
 
                         <div class="col-md-6 col-md-offset-3" ng-controller="UserController">
-                            <h2>Register</h2> {{userName}}
+                            <h2>Register</h2>
                             <form name="form" ng-submit="" role="form">
                                 <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
                                     <label for="username">Username</label>
@@ -102,7 +102,7 @@
                                     <button ng-click="LoginUser()" class="btn btn-primary">Login</button>
                                     <button ng-click="RegisterUser()" class="btn btn-primary">Register</button>
                                 </div>
-                                <div ng-show="errorLogin ==true">User not found!</div>
+                                <div style="color: red;" ng-show="errorLogin ==true">User not found!</div>
                             </form>
                         </div>
                     </div>
@@ -116,10 +116,9 @@
                 </p>
             </div>
         </div>
-        <hr />
-        <footer>
+        @*<footer>
             <p>My Inventory Application</p>
-        </footer>
+        </footer>*@
     </div>
 
 

@@ -208,6 +208,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\car\car1.jpg" />
     <Content Include="Interface\Default.html" />
     <Content Include="modal-form-add.html" />
     <Content Include="modal-form.html" />

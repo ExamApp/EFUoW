@@ -1,29 +1,10 @@
 
 //The Module Declaration
 var app = angular.module('inventoryApp', ['ui.bootstrap']);
-//app.filter('startsWithModelOrBrand', function () {
-//    return function (item) {
-//        return item.Brand == "Maruti";
-//    };
-//});
-
-//app.filter('startsWithModelOrBrand', function () {
-//    return function (items) {
-//        var filtered = [];
-//        for (var i = 0; i < items.length; i++) {
-//            var item = items[i];
-//            if (/a/i.test(item.name.substring(0, 1))) {
-//                filtered.push(item);
-//            }
-//        }
-//        return filtered;
-//    };
-//});
 
 //Declaring Service
 app.service('InventoryService', function ($http) {
 
-    
     this.getUserCar = function (userName, callback) {
         var base_url = window.location.origin;
         var url = base_url + "/api/UserInventory/GetUserCar";
@@ -55,8 +36,6 @@ app.service('InventoryService', function ($http) {
         var data = $http(req).then(callback);
         return data;
     };
-      //  var promise = InventoryService.addUserCar(userName, model, brand, price, year, AddUserCar_callback);
-    //
 
     this.addUserCar = function (userName, model, brand, price, year, callback) {
         var base_url = window.location.origin;
