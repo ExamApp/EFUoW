@@ -22,17 +22,17 @@ namespace InventoryApp.Controllers
 
         [HttpPost]
         [Route("api/Registration/Register")]
-        public string Register(string userName, string password)
+        public bool Register(string userName, string password)
         {
             UnitOfWork uof = new UnitOfWork();
             uof.UserRepository.Insert(
                 new User()
-                { UserName = userName, Password = password }
+                { UserName = userName, Password = password } 
             );
 
             uof.Save();
 
-            return "Worked..." + userName + " ," + password;
+            return true;
         }
 
         [HttpGet]
