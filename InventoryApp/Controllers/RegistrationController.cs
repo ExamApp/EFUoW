@@ -27,7 +27,7 @@ namespace InventoryApp.Controllers
             UnitOfWork uof = new UnitOfWork();
             uof.UserRepository.Insert(
                 new User()
-                { UserName = userName, Password = password }
+                { UserName = userName, Password = password } 
             );
 
             uof.Save();
