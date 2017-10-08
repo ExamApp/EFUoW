@@ -1,0 +1,132 @@
+﻿
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<div ng-app="inventoryApp" ng-controller="InventoryController">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home/Index1">My Car Inventory</a>
+            </div>
+            <div class="navbar-collapse collapse" style="float:right">
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Home/Index1">Home</a></li>
+                    <li style="float:right"><a href="javascript:void()" ng-click="UserSignOut()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        Welcome : {{userName}}
+        <hr/>
+       
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="input-group" style="float:right">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                        <input type="text"  class="form-control" placeholder="Model or Brand" ng-model="carFilter" >
+                        @*<span class="input-group-addon1">
+                            <button  ng-click="FindByBrand()" class="btn btn-primary" ng-model="fBrand">Brand</button>
+                        </span>
+                        <span class="input-group-addon1">
+                            <button ng-click="FindByModel()" class="btn btn-primary" ng-model="fModel">Model</button>
+                        </span>*@
+                        <span class="input-group-addon1">
+                            <button ng-click="AddUserCar()" class="btn btn-primary">Add a new car in yout list</button>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+            <h3 style="float:left">My Inventory</h3>
+            <section />
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Brand
+                                </th>
+                                <th>
+                                    Model
+                                </th>
+                                <th>
+                                    Year
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="car in userCar | filter: myFilter">
+                                <td>
+                                    {{car.Id}}
+                                </td>
+                                <td>
+                                    {{car.Brand}}
+                                </td>
+                                <td>
+                                    {{car.Model}}
+                                </td>
+                                <td>
+                                    {{car.Year}}
+                                </td>
+                                <td>
+                                    {{car.Price}}
+                                </td>
+                                <td>
+                                    @*<button ng-click="EditCar(car.Id, car.Brand, car.Model, car.Year, car.Price, userName" class="btn btn-primary">Edit</button>*@
+                                    <button ng-click="EditCar(car.Id, car.Brand, car.Model, car.Year, car.Price, userName, car)" class="btn btn-primary">Edit</button>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr/>
+
+        </div>
+        <footer>
+            <p>My Inventory Application</p>
+        </footer>
+    </div>
+
+
+
+</div>
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/appJs/angular.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.9.0.js"></script>
+
+<script src="~/appJs/inventory.js"></script>
+<script>
+
+
+</script>
+@*<script type="text/ng-template" id="firstDialogId">
+    <div class="ngdialog-message">
+        <h3>ngDialog template</h3>
+        <p ng-show="theme">Test content for <code>{{theme}}</code></p>
+        <p ng-show="ngDialogData.foo">Data passed through directive: <code>{{ngDialogData.foo}}</code></p>
+    </div>
+    <div class="ngdialog-buttons">
+    </div>
+</script>*@

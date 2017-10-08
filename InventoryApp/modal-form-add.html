@@ -1,0 +1,35 @@
+﻿<div class="modal-header">
+    <h3>Add Car details!</h3>
+</div>
+<form name="form.userForm" ng-submit="submitForm()" novalidate>
+    <div class="modal-body">
+        <!-- BRAND -->
+        <div class="form-group">
+            <label>Car Brand</label>
+            <input type="text" name="name" class="form-control" ng-model="brand" required>
+        </div>
+
+        <!-- MODEL -->
+        <div class="form-group">
+            <label>Model</label>
+            <input type="text" name="model" class="form-control" ng-model="model" required>
+        </div>
+
+        <!-- YEAR -->
+        <div class="form-group">
+            <label>YEAR</label>
+            <input type="text" name="year" class="form-control" ng-model="year" required>
+        </div>
+
+        <!-- PRICE -->
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" name="price" class="form-control" ng-model="price" required>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-disabled="form.userForm.$invalid">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html ng-app="inventoryApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="carousel slide" id="carousel-314607">
+                        <ol class="carousel-indicators">
+                            <li class="active" data-slide-to="0" data-target="#carousel-314607">
+                            </li>
+                            <li data-slide-to="1" data-target="#carousel-314607">
+                            </li>
+                            <li data-slide-to="2" data-target="#carousel-314607">
+                            </li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img alt="Carousel Bootstrap First" src="http://lorempixel.com/output/sports-q-c-1600-500-1.jpg" />
+                                <div class="carousel-caption">
+                                    <h4>
+                                        First Thumbnail label
+                                    </h4>
+                                    <p>
+                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img alt="Carousel Bootstrap Second" src="http://lorempixel.com/output/sports-q-c-1600-500-2.jpg" />
+                                <div class="carousel-caption">
+                                    <h4>
+                                        Second Thumbnail label
+                                    </h4>
+                                    <p>
+                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img alt="Carousel Bootstrap Third" src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" />
+                                <div class="carousel-caption">
+                                    <h4>
+                                        Third Thumbnail label
+                                    </h4>
+                                    <p>
+                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <a class="left carousel-control" href="#carousel-314607" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-314607" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-8">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <h3>
+                                   Register or Login
+                                </h3>
+                                <br/>
+                                <label for="inputEmail3" class="col-sm-2 control-label">
+                                    Email
+                                </label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="inputEmail3" type="email" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <label for="inputPassword3" class="col-sm-2 control-label">
+                                    Password
+                                </label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="inputPassword3" type="password" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">
+                                        Sign in
+                                    </button>
+                                    <button type="submit" class="btn btn-default">
+                                        Register
+                                    </button>
+                                </div>
+                                  
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+                </p>
+            </div>
+        </div>
+        <hr/>
+        <footer>
+            <p>My Inventory Application</p>
+        </footer>
+    </div>
+
+
+    <div class="col-md-6 col-md-offset-3" ng-controller="InventoryController">
+        <h2>Register</h2> {{userName}}
+        <form name="form" ng-submit="" role="form">
+            <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-control" ng-model="username" required />
+                <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
+                <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            </div>
+            <div class="form-actions">
+                <button ng-click="RegisterUser()" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../appJs/angular.min.js"></script>
+    <script src="../appJs/inventory.js"></script>
+</body>
+</html>
