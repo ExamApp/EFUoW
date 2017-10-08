@@ -212,6 +212,7 @@
     <Content Include="Interface\Default.html" />
     <Content Include="modal-form-add.html" />
     <Content Include="modal-form.html" />
+    <Content Include="Readme.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
