@@ -1,4 +1,5 @@
 ﻿using Inventory.Model;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,9 +12,11 @@ namespace Inventory.Repository
 {
     public class InventoryContext : DbContext
     {
+        protected static readonly ILog ServiceLogger = LogHelper.GetLogger();
 
         public InventoryContext() : base("name=InventoryConnectionString")
         {
+            ServiceLogger.Info("Initializing DB");
         }
 
         public DbSet<Car> Cars { get; set; }

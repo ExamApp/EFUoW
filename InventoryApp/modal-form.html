@@ -1,5 +1,5 @@
 ﻿<div class="modal-header">
-    <h3>Update Car details!</h3>
+    <h4>Update Car details!</h4>
 </div>
 <form name="form.userForm" ng-submit="submitForm()" novalidate>
     <div class="modal-body">
@@ -20,13 +20,19 @@
             <label>YEAR</label>
             <input type="text" name="year" class="form-control" ng-model="year" required>
         </div>
-
+       
         <!-- PRICE -->
         <div class="form-group">
             <label>Price</label>
             <input type="text" name="price" class="form-control" ng-model="price" required>
         </div>
-
+        <!-- new -->
+        <div class="form-group">
+            <label>NEW</label> 
+            <span class="form-group">
+             <input style="width:5%" type="checkbox" name="new" class="form-control" ng-model="new" required>
+            </span>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="submit" class="btn btn-primary" ng-disabled="form.userForm.$invalid">OK</button>

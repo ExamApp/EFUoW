@@ -26,20 +26,22 @@
     </div>
     <div class="container body-content">
         <h5> Welcome : {{userName}}</h5>
-        <hr/>
-       
+        <hr />
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-8">
                     <div class="input-group" style="float:right">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                        <input type="text"  class="form-control" placeholder="Model or Brand" ng-model="carFilter" >
-                        @*<span class="input-group-addon1">
-                            <button  ng-click="FindByBrand()" class="btn btn-primary" ng-model="fBrand">Brand</button>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-search"></span>
                         </span>
-                        <span class="input-group-addon1">
-                            <button ng-click="FindByModel()" class="btn btn-primary" ng-model="fModel">Model</button>
-                        </span>*@
+                        <input type="text" class="form-control" placeholder="Model or Brand" ng-model="carFilter">
+                        @*<span class="input-group-addon1">
+                                <button  ng-click="FindByBrand()" class="btn btn-primary" ng-model="fBrand">Brand</button>
+                            </span>
+                            <span class="input-group-addon1">
+                                <button ng-click="FindByModel()" class="btn btn-primary" ng-model="fModel">Model</button>
+                            </span>*@
                         <span class="input-group-addon1">
                             <button ng-click="AddUserCar()" class="btn btn-primary">Add a new car in yout list</button>
                         </span>
@@ -56,20 +58,17 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>
-                                    #
-                                </th>
-                                <th>
-                                    Brand
-                                </th>
-                                <th>
-                                    Model
-                                </th>
+                                <th>#</th>
+                                <th>Brand</th>
+                                <th>Model</th>
                                 <th>
                                     Year
                                 </th>
                                 <th>
                                     Price
+                                </th>
+                                <th>
+                                    New
                                 </th>
                             </tr>
                         </thead>
@@ -91,11 +90,14 @@
                                     {{car.Price}}
                                 </td>
                                 <td>
+                                    {{car.New}}
+                                </td>
+                                <td>
                                     @*<button ng-click="EditCar(car.Id, car.Brand, car.Model, car.Year, car.Price, userName" class="btn btn-primary">Edit</button>*@
                                     <button ng-click="EditCar(car.Id, car.Brand, car.Model, car.Year, car.Price, userName, car)" class="btn btn-primary">Edit</button>
                                 </td>
                             </tr>
-                          
+
                         </tbody>
                     </table>
                 </div>
